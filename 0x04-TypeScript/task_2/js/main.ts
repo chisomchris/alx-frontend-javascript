@@ -52,14 +52,14 @@ function createEmployee(salary: number | string): Director | Teacher {
 }
 
 // Type predicate to check if an employee is a Director
-function isDirector(
+export function isDirector(
   employee: ReturnType<typeof createEmployee>
 ): employee is Director {
   return employee instanceof Director;
 }
 
 // Function to execute work depending on employee type
-function executeWork(employee: ReturnType<typeof createEmployee>): string {
+export function executeWork(employee: ReturnType<typeof createEmployee>): string {
   if (isDirector(employee)) {
     return employee.workDirectorTasks();
   } else {
@@ -69,7 +69,7 @@ function executeWork(employee: ReturnType<typeof createEmployee>): string {
 
 type Subjects = "Math" | "History";
 
-function teachClass(todayClass: Subjects): string {
+export function teachClass(todayClass: Subjects): string {
   if (todayClass === "Math") {
     return "Teaching Math";
   } else {
