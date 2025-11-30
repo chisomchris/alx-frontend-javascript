@@ -1,9 +1,14 @@
-// Create and export constants for subjects
-const cpp = new Subjects.Cpp();
-const java = new Subjects.Java();
-const react = new Subjects.React();
+/// <reference path="./subjects/Cpp.ts" />
 
-const cTeacher: Subjects.Teacher = {
+class Cpp extends Subjects.Cpp {}
+class Java extends Subjects.Java {}
+class React extends Subjects.React {}
+interface Teacher extends Subjects.Teacher {}
+const cpp = new Cpp();
+const java = new Java();
+const react = new React();
+
+const cTeacher: Teacher = {
   firstName: "John",
   lastName: "Doe",
   experienceTeachingC: 10,
