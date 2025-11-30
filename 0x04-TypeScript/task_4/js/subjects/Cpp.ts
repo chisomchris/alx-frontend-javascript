@@ -1,7 +1,6 @@
 /// <reference path="./Subject.ts" />
 
 namespace Subjects {
-  // Declaration merging: add new attribute to Teacher
   export interface Teacher {
     experienceTeachingC?: number;
   }
@@ -12,7 +11,11 @@ namespace Subjects {
     }
 
     getAvailableTeacher(): string {
-      if (!this.teacher || this.teacher.experienceTeachingC === undefined || this.teacher.experienceTeachingC <= 0) {
+      if (
+        !this.teacher ||
+        this.teacher.experienceTeachingC === undefined ||
+        this.teacher.experienceTeachingC <= 0
+      ) {
         return "No available teacher";
       }
       return `Available Teacher: ${this.teacher.firstName}`;
